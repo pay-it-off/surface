@@ -420,7 +420,8 @@ defmodule Mix.Tasks.Surface.Init.ExPatcher do
 
   defp to_string_opts() do
     "mix.exs"
-    |> Mix.Tasks.Format.formatter_opts_for_file()
+    |> Mix.Tasks.Format.formatter_for_file()
+    |> elem(1)
     |> Keyword.take([:line_length])
   end
 
